@@ -1,6 +1,6 @@
-/out
-/world
-*.dat
-*.iml
-*.ipr
-*.iws
+/.settings
+/.classpath
+/.project
+/target/classes
+/target/generated-sources
+/target/maven-archiver
