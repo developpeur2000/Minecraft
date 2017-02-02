@@ -12,6 +12,7 @@ import developpeur2000.minecraft.util.PropertyAnnotationInfo;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -103,7 +104,11 @@ public class NBTMarshal {
 
         final Object value = unmarshalValue(property.getPropertyType(), valueTags, translator, listItemType);
         try {
-            property.getWriteMethod().invoke(target, value);
+        	Method writeMethod = property.getWriteMethod();
+        	if (writeMethod == null) {
+        		throw new NBTMarshalException("Failed to set value " + value + " for property " + property.getName() + " because set method is not defined");
+        	}
+        	writeMethod.invoke(target, value);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             throw new NBTMarshalException("Failed to set value " + value + " for property " + property.getName(), ex);
         }

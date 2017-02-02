@@ -133,7 +133,7 @@ public class ItemFrame extends Entity {
         return itemRotation;
     }
 
-    public void setOItemRotation(byte itemRotation) {
+    public void setItemRotation(byte itemRotation) {
         this.itemRotation = itemRotation;
     }
 
