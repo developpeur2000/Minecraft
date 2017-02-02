@@ -16,7 +16,7 @@ import developpeur2000.minecraft.minecraft_rw.nbt.marshal.annotations.NBTPropert
  */
 @NBTCompoundType
 public class MobSpawner extends BlockEntity {
-    private static final Logger LOGGER = Logger.getLogger("MobSpawner");
+    private static final Logger LOGGER = Logger.getLogger("developpeur2000.minecraft.minecraft_rw.entity.MobSpawner");
 	
     @NBTProperty(upperCase = true, optional = true, listItemType=MobSpawnerSpawn.class)
     private ArrayList<MobSpawnerSpawn> spawnPotentials;

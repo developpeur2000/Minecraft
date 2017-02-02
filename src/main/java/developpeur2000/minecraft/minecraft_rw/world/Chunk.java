@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 @NBTCompoundType
 public class Chunk implements NBTCompoundProcessor {
-    private static final Logger LOGGER = Logger.getLogger("Chunk");
+    private static final Logger LOGGER = Logger.getLogger("developpeur2000.minecraft.minecraft_rw.world.Chunk");
     
     public static final int BLOCKS = 16; //in blocks
     static final int BLOCKS_SQ = BLOCKS * BLOCKS;

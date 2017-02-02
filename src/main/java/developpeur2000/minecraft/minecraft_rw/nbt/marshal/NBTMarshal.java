@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  * Only annotated fields will be regarded by the marshaller / unmarshaller.
  */
 public class NBTMarshal {
-    private static final Logger LOGGER = Logger.getLogger("NBTMarshal");
+    private static final Logger LOGGER = Logger.getLogger("developpeur2000.minecraft.minecraft_rw.nbt.marshal.NBTMarshal");
     private static final Map<Class<? extends NBTTranslator>, NBTTranslator> TRANSLATORS = new HashMap<>();
 
     private static NBTTranslator<?> translatorInstance(Class<? extends NBTTranslator> translatorClass) {

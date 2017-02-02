@@ -13,7 +13,7 @@ import developpeur2000.minecraft.minecraft_rw.nbt.marshal.annotations.NBTCompoun
  */
 @NBTCompoundType
 public class Section implements NBTCompoundProcessor {
-    private static final Logger LOGGER = Logger.getLogger("Section");
+    private static final Logger LOGGER = Logger.getLogger("developpeur2000.minecraft.minecraft_rw..world.Section");
     
     private static final int AIR = 0;
 

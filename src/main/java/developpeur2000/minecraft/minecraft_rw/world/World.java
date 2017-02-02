@@ -26,7 +26,7 @@ import developpeur2000.minecraft.minecraft_rw.nbt.marshal.NBTMarshal;
  * Represents a Minecraft world.
  */
 public class World {
-    private static final Logger LOGGER = Logger.getLogger("World");
+    private static final Logger LOGGER = Logger.getLogger("developpeur2000.minecraft.minecraft_rw.world.World");
     
     private static long regionToKey(int x, int z) {
         return ((long) x << 32) | ((long) z & 0xffffffffL);
