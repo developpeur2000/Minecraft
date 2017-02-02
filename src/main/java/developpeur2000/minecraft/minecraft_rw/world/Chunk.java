@@ -106,7 +106,12 @@ public class Chunk implements NBTCompoundProcessor {
 	        }
 	        
 	        for (NBT<?> entityNbt : nbt.getList("Entities")) {
-	            Entity entity = NBTMarshal.unmarshal(Entity.class, entityNbt);
+	        	Entity entity = null;
+            	try {
+            		entity = NBTMarshal.unmarshal(Entity.class, entityNbt);
+            	} catch (Exception e) {
+                	LOGGER.log(Level.WARNING,"failed to load entity as it seemed malformed : " + e.getMessage());
+            	}
             	try {
 	            	entity = (Entity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity."+entity.getId()), entityNbt);
             	} catch (ClassNotFoundException e) {
