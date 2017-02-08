@@ -256,6 +256,10 @@ public class Level implements NBTCompoundProcessor {
         this.dirty = false;
     }
 	
+	public String getName() {
+		return this.levelName;
+	}
+
 	public void setName(String name) {
 		this.levelName = name;
         this.dirty = true;
