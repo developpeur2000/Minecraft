@@ -116,7 +116,7 @@ public class Chunk implements NBTCompoundProcessor {
 	            	entity = (Entity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity."+entity.getId()), entityNbt);
             	} catch (ClassNotFoundException e) {
 	            	//not implemented yet
-                	LOGGER.log(Level.INFO,"failed to load entity of type " + entity.getId()
+                	LOGGER.log(Level.WARNING,"failed to load entity of type " + entity.getId()
                 		+ " at " + entity.getPos().toString() + " because it is not implemented yet");
 
 	            	//TODO: projectiles, xpOrbs, vehicles, dynamicTiles, Other
@@ -138,7 +138,7 @@ public class Chunk implements NBTCompoundProcessor {
             		blockEntity = (BlockEntity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity."+blockEntity.getId()), blockEntityNbt);
             	} catch (ClassNotFoundException e) {
 	            	//not implemented yet
-                	LOGGER.log(Level.INFO,"failed to load block entity of type " + blockEntity.getId()
+                	LOGGER.log(Level.WARNING,"failed to load block entity of type " + blockEntity.getId()
                 		+ " at " + blockEntity.getX() + "," + blockEntity.getY() + "," + blockEntity.getZ()
                 		+ " because it is not implemented yet");
                 	blockEntity = null;

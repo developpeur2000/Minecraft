@@ -175,7 +175,7 @@ public class World {
         if (region == null) {
             final Path regionFile = getRegionFile(regionX, regionZ);
             try {
-                LOGGER.log(Level.FINE, "Initializing region " + regionFile.toString());
+                LOGGER.log(Level.INFO, "Initializing region " + regionFile.toString());
                 region = new Region(regionFile);
             } catch (IOException ex) {
                 throw new WorldException("Failed to initialize region from " + regionFile.toString(), ex);
