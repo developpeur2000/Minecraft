@@ -626,7 +626,16 @@ public final class BlockData {
 		public final static byte DAMAGE_LIGHT = 0x01;
 		public final static byte DAMAGE_HEAVY = 0x02;
 	}
-	
+
+	public final class OBSERVER {
+		public final static byte ONWALL_FACING_DOWN = 0x00;
+		public final static byte ONWALL_FACING_UP = 0x01;
+		public final static byte ONWALL_FACING_SOUTH = 0x02;
+		public final static byte ONWALL_FACING_NORTH = 0x03;
+		public final static byte ONWALL_FACING_EAST = 0x04;
+		public final static byte ONWALL_FACING_WEST = 0x05;
+	}
+
 	//TODO: potions data
 
 	public final class GOLDEN_APPLE {
