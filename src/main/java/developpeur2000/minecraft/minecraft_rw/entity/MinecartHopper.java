@@ -16,7 +16,7 @@ public class MinecartHopper extends Minecart {
     @NBTProperty(upperCase = true)
     private int transferCooldown;
 
-    @NBTProperty(upperCase = true)
+    @NBTProperty(upperCase = true, optional = true)
     private boolean enabled;
 
     @NBTProperty(upperCase = true, optional = true)

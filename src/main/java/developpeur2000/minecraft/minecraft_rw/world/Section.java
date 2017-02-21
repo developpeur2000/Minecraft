@@ -110,12 +110,6 @@ public class Section implements NBTCompoundProcessor {
                         id += addValue << 8;
                     }
                     
-                    if(i == 3245)
-                    {
-                    	x = x + 1;
-                    	x = x - 1;
-                    }
-
                     if (id != AIR) {
                     	if (id >= BlockType.values().length) {
                     		LOGGER.log(Level.WARNING, "found a block with an unknown id : " + id
