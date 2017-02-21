@@ -35,7 +35,7 @@ public class ItemFrame extends Entity {
     @NBTProperty(upperCase = true, optional = true)
     private HashMap<String,NBT> item;
     
-    @NBTProperty(upperCase = true)
+    @NBTProperty(upperCase = true, optional = true)
     private float itemDropChance;
 
     @NBTProperty(upperCase = true)
