@@ -171,7 +171,7 @@ public class NBTMarshal {
                                 translatorInstance(prop.annotation.translator()),
                                 prop.annotation.listItemType());
                     } else if (!prop.annotation.optional()) {
-                        throw new NBTMarshalException("Non-optional property \"" + prop.descriptor.getName() + "\"" +
+                    	LOGGER.warning("Non-optional property \"" + prop.descriptor.getName() + "\"" +
                                 " does not exist in compound of " + target.toString());
                     }
                 }
