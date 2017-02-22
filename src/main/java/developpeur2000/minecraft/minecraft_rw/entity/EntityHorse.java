@@ -6,7 +6,7 @@ import developpeur2000.minecraft.minecraft_rw.nbt.marshal.annotations.NBTCompoun
 import developpeur2000.minecraft.minecraft_rw.nbt.marshal.annotations.NBTProperty;
 
 /**
- * Base class for horse entities.
+ * Base class for generic horse entities.
  */
 @NBTCompoundType
 public class EntityHorse extends BreedableMob {
@@ -86,8 +86,8 @@ public class EntityHorse extends BreedableMob {
     /**
      * Constructs a new blank item (to use when loading from file)
      */
-    public EntityHorse() {
-    	super("EntityHorse");
+    public EntityHorse(String id) {
+    	super(id);
         bred = false;
         chestedHorse = false;
         eatingHaystack = false;
