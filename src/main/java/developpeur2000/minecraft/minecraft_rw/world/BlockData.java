@@ -125,12 +125,16 @@ public final class BlockData {
 		public final static byte STONE_BRICK = 0x05;
 		public final static byte NETHER_BRICK = 0x06;
 		public final static byte QUARTZ = 0x07;
+		public final static byte RIGHT_SIDE_UP_SINGLEONLY = 0x00;
+		public final static byte UPSIDE_DOWN_SINGLEONLY = 0x08;
 		public final static byte SMOOTH_STONE_DOUBLEONLY = 0x08;
 		public final static byte SMOOTH_SANDSTONE_DOUBLEONLY = 0x09;
-		public final static byte TILE_QUARTZ_DOUBLEONLY = 0x07;
+		public final static byte TILE_QUARTZ_DOUBLEONLY = 0x0F;
 	}
 	public final class STONESLABS2 { /* common to stoneslab2 and double stoneslab2 */
 		public final static byte REDSTONE = 0x00;
+		public final static byte RIGHT_SIDE_UP_SINGLEONLY = 0x00;
+		public final static byte UPSIDE_DOWN_SINGLEONLY = 0x08;
 		public final static byte SMOOTH_REDSTONE_DOUBLEONLY = 0x08;
 	}
 	public final class WOODENSLABS { /* common to woodenslab and double woodenslab */
@@ -140,6 +144,8 @@ public final class BlockData {
 		public final static byte JUNGLE = 0x03;
 		public final static byte ACACIA = 0x04;
 		public final static byte DARK_OAK = 0x05;
+		public final static byte RIGHT_SIDE_UP_SINGLEONLY = 0x00;
+		public final static byte UPSIDE_DOWN_SINGLEONLY = 0x08;
 	}
 	public final class SANDSTONES { /* common to sandstone and red sandstone */
 		public final static byte SANDSTONE = 0x00;
