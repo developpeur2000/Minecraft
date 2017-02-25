@@ -209,7 +209,7 @@ public class EntityHorse extends BreedableMob {
     public StoredItem getArmorItem() {
         return armorItem;
     }
-    public void SetArmorItem(StoredItem armorItem) {
+    public void setArmorItem(StoredItem armorItem) {
         this.armorItem = armorItem;
     }
 
