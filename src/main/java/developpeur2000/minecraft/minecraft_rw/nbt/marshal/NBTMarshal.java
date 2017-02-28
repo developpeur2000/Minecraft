@@ -110,7 +110,9 @@ public class NBTMarshal {
         	}
         	writeMethod.invoke(target, value);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-            throw new NBTMarshalException("Failed to set value " + value + " for property " + property.getName(), ex);
+        	LOGGER.warning(String.format("Failed to set value %s for property %s of class %s",
+        			value.toString(), property.getName(), target.getClass().toString()));
+            //throw new NBTMarshalException("Failed to set value " + value + " for property " + property.getName(), ex);
         }
 
         LOGGER.log(Level.FINE, property.getName() + " -> " + value);
@@ -218,8 +220,8 @@ public class NBTMarshal {
                         	compound.put( nbtNames[i], nbtTags[i] );
                     	}
                     } else if (!prop.annotation.optional()) {
-                        throw new NBTMarshalException("Non-optional property \"" + prop.descriptor.getName() + "\"" +
-                                " is not set in object " + object.getClass().getName() + ".");
+                    	LOGGER.warning("Non-optional property \"" + prop.descriptor.getName() + "\"" +
+                                " does not exist in object " + object.getClass().getName());
                     }
                 }
             } catch (IntrospectionException ex) {
