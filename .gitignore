@@ -5,3 +5,6 @@
 /target/generated-sources
 /target/maven-archiver
 /target/
+/bin/src/main/java/developpeur2000/minecraft/minecraft_rw/world/*.class
+/bin/.gitignore
+/bin

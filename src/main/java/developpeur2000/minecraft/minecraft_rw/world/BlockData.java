@@ -194,14 +194,10 @@ public final class BlockData {
 		public final static byte HEAD_SOUTH = 0x03;
 		public final static byte HEAD_WEST = 0x04;
 		public final static byte HEAD_EAST = 0x05;
-	}
-	public final class PISTON {
-		public final static byte RETRACTED = 0x00;
-		public final static byte PUSHED = 0x08;
-	}
-	public final class PISTONEXTENSION {
-		public final static byte REGULAR = 0x00;
-		public final static byte STICKY = 0x08;
+		public final static byte PISTON_ONLY_RETRACTED = 0x00;
+		public final static byte PISTON_ONLY_PUSHED = 0x08;
+		public final static byte EXTENSION_ONLY_REGULAR = 0x00;
+		public final static byte EXTENSION_ONLY_STICKY = 0x08;
 	}
 	public final class STAIRS {
 		public final static byte FULLBLOCK_SIDE_EAST = 0x00;
@@ -286,7 +282,7 @@ public final class BlockData {
 		public final static byte TOPHALFONLY_UNPOWERED = 0x00;
 		public final static byte TOPHALFONLY_POWERED = 0x02;
 		public final static byte BOTTOMHALFONLY_CLOSED = 0x00;
-		public final static byte BOTTOMHALFONLY_OPENED = 0x01;
+		public final static byte BOTTOMHALFONLY_OPENED = 0x04;
 		public final static byte BOTTOMHALFONLY_FACING_WEST = 0x00;
 		public final static byte BOTTOMHALFONLY_FACING_NORTH = 0x01;
 		public final static byte BOTTOMHALFONLY_FACING_EAST = 0x02;
@@ -498,6 +494,7 @@ public final class BlockData {
 		public final static byte FACING_EAST = 0x03;
 		public final static byte CLOSED = 0x00;
 		public final static byte OPENED = 0x04;
+		public final static byte POWERED = 0x08;
 	}
 	public final class NETHER_WART {
 		public final static byte GROWTH_0 = 0x00;
@@ -545,6 +542,7 @@ public final class BlockData {
 	public final class TRIPWIRE {
 		public final static byte ACTIVATED = 0x01;
 		public final static byte NOT_CONNECTED = 0x00;
+		public final static byte UNUSED = 0x02;
 		public final static byte CONNECTED = 0x04;
 		public final static byte DISARMED = 0x08;
 	}
