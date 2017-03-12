@@ -5,7 +5,13 @@ package developpeur2000.minecraft.minecraft_rw.world;
  * 
  */
 public final class BlockData {
-	public final static byte NONE = 0x00;
+	public final class GENERIC {
+		public final static byte NONE = 0x00;
+		public final static byte BIT1 = 0x01;
+		public final static byte BIT2 = 0x02;
+		public final static byte BIT3 = 0x04;
+		public final static byte BIT4 = 0x08;
+	}
 	
 	public final class WOODPLANKS {
 		public final static byte OAK = 0x00;
@@ -87,7 +93,7 @@ public final class BlockData {
 		public final static byte CHECK_DECAY = 0x08;
 	}
 
-	public final class COLORS { // for WOOL, STAINED CLAY, STAINED GLASS and CARPET
+	public final class COLORS { // for WOOL, STAINED CLAY, STAINED GLASS, CARPET, CONCRETE and CONCRETE_POWDER
 		public final static byte WHITE = 0x00;
 		public final static byte ORANGE = 0x01;
 		public final static byte MAGENTA = 0x02;
