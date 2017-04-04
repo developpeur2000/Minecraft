@@ -38,6 +38,21 @@ public class Chunk implements NBTCompoundProcessor {
     private static int xz1D(int x, int z) {
         return z * BLOCKS + x;
     }
+    
+    private static String extractEntityId(String id) {
+    	String entityId = id;
+		if (entityId.startsWith("minecraft:")) {
+			String[] parts = entityId.split(":");
+			if (parts.length == 2) {
+				parts = parts[1].split("_");
+				entityId = "";
+				for (int i = 0; i < parts.length; i ++) {
+					entityId += parts[i].substring(0, 1).toUpperCase() + parts[i].substring(1);
+				}
+			}
+		}
+		return entityId;
+    }
 
     private int x;
     private int z;
@@ -114,18 +129,7 @@ public class Chunk implements NBTCompoundProcessor {
             	}
             	try {
             		//treat entity id stored as item name (minecraft:xxx)
-            		String entityId = entity.getId();
-            		if (entityId.startsWith("minecraft:")) {
-            			String[] parts = entityId.split(":");
-            			if (parts.length == 2) {
-            				parts = parts[1].split("_");
-            				entityId = "";
-            				for (int i = 0; i < parts.length; i ++) {
-            					entityId += parts[i].substring(0, 1).toUpperCase() + parts[i].substring(1);
-            				}
-            			}
-            		}
-	            	entity = (Entity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity."+entityId), entityNbt);
+	            	entity = (Entity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity." + extractEntityId(entity.getId())), entityNbt);
             	} catch (ClassNotFoundException e) {
 	            	//not implemented yet
                 	LOGGER.log(Level.WARNING,"failed to load entity of type " + entity.getId()
@@ -147,7 +151,7 @@ public class Chunk implements NBTCompoundProcessor {
                 	LOGGER.log(Level.WARNING,"failed to load block entity as it seemed malformed : " + e.getMessage());
             	}
             	try {
-            		blockEntity = (BlockEntity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity."+blockEntity.getId()), blockEntityNbt);
+            		blockEntity = (BlockEntity) NBTMarshal.unmarshal(Class.forName("developpeur2000.minecraft.minecraft_rw.entity." + extractEntityId(blockEntity.getId())), blockEntityNbt);
             	} catch (ClassNotFoundException e) {
 	            	//not implemented yet
                 	LOGGER.log(Level.WARNING,"failed to load block entity of type " + blockEntity.getId()
